@@ -45,26 +45,26 @@ if [[ "${FOUNDRY_WORLD:-}" ]]; then
 fi
 
 # Update configuration file
-mkdir -p /data/Config >& /dev/null
-log "Generating options.json file."
-cat <<EOF > /data/Config/options.json
-{
-  "awsConfig": ${FOUNDRY_AWS_CONFIG:-null},
-  "dataPath": "/data",
-  "fullscreen": false,
-  "hostname": ${FOUNDRY_HOSTNAME:-null},
-  "noUpdate": ${FOUNDRY_NO_UPDATE:-true},
-  "port": 30000,
-  "proxyPort": ${FOUNDRY_PROXY_PORT:-null},
-  "proxySSL": ${FOUNDRY_PROXY_SSL:-false},
-  "routePrefix": ${FOUNDRY_ROUTE_PREFIX:-null},
-  "sslCert": ${FOUNDRY_SSL_CERT:-null},
-  "sslKey": ${FOUNDRY_SSL_KEY:-null},
-  "updateChannel": ${FOUNDRY_UPDATE_CHANNEL:-\"release\"},
-  "upnp": ${FOUNDRY_UPNP:-false},
-  "world": ${FOUNDRY_WORLD:-null}
-}
-EOF
+# mkdir -p /data/Config >& /dev/null
+# log "Generating options.json file."
+# cat <<EOF > /data/Config/options.json
+# {
+  # "awsConfig": ${FOUNDRY_AWS_CONFIG:-null},
+  # "dataPath": "/data",
+  # "fullscreen": false,
+  # "hostname": ${FOUNDRY_HOSTNAME:-null},
+  # "noUpdate": ${FOUNDRY_NO_UPDATE:-true},
+  # "port": 30000,
+  # "proxyPort": ${FOUNDRY_PROXY_PORT:-null},
+  # "proxySSL": ${FOUNDRY_PROXY_SSL:-false},
+  # "routePrefix": ${FOUNDRY_ROUTE_PREFIX:-null},
+  # "sslCert": ${FOUNDRY_SSL_CERT:-null},
+  # "sslKey": ${FOUNDRY_SSL_KEY:-null},
+  # "updateChannel": ${FOUNDRY_UPDATE_CHANNEL:-\"release\"},
+  # "upnp": ${FOUNDRY_UPNP:-false},
+  # "world": ${FOUNDRY_WORLD:-null}
+# }
+# EOF
 
 # Save Admin Access Key if it is set
 if [[ "${FOUNDRY_ADMIN_KEY:-}" ]]; then

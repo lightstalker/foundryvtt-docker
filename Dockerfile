@@ -82,14 +82,12 @@ RUN addgroup --system --gid ${FOUNDRY_UID} foundry \
   su-exec \
   tzdata \
   && npm install && echo ${VERSION} > image_version.txt
-  
-RUN npm install -g nodemon
 
 VOLUME ["/data"]
 EXPOSE 30000/TCP
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["nodemon", "resources/app/main.js", "--port=30000", "--headless", "--dataPath=/data"]
+CMD ["resources/app/main.js", "--port=30000", "--headless", "--dataPath=/data"]
 HEALTHCHECK --start-period=3m --interval=30s --timeout=5s \
   CMD /usr/bin/curl --cookie-jar healthcheck-cookiejar.txt \
   --cookie healthcheck-cookiejar.txt --fail --silent \
